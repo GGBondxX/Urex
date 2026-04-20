@@ -2,8 +2,6 @@ import os
 import csv
 import shutil
 
-# --- FULL 12-CLASS MAPPING ---
-# Matches the exact index from your Roboflow data.yaml
 CLASS_MAPPING = {
     0: 'spaghetti_and_stringing',
     1: 'warp',
@@ -66,11 +64,11 @@ def convert_yolo_to_multilabel(images_dir, labels_dir, output_dir):
         else:
             clean_img_name = img_file
 
-        # 2. UPDATED: Build the row using the clean name
+        # 2. Build the row using the clean name
         row = [clean_img_name, flags['normal']] + [flags[name] for name in defect_classes]
         csv_data.append(row)
 
-        # 3. UPDATED: Copy AND RENAME the image to the new folder
+        # 3. Copy AND RENAME the image to the new folder
         shutil.copy2(img_path, os.path.join(out_images_dir, clean_img_name))
 
     # Save the CSV file

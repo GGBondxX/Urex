@@ -83,9 +83,8 @@ def evaluate_as_classifier(model, img_dir, lbl_dir, conf_threshold=0.25):
 
 
 if __name__ == '__main__':
-    # --- 1. LOAD YOUR SPECIFIC MODEL ---
+    # --- 1. LOAD SPECIFIC MODEL ---
     print("Loading model from train2...")
-    # Pointing directly to your previously trained model
     best_model = YOLO(os.path.abspath('runs/detect/train2/weights/best.pt'))
 
     # --- 2. SET YOUR NEW DATASET PATHS ---
@@ -94,5 +93,4 @@ if __name__ == '__main__':
     test_labels_dir = os.path.abspath('test2/labels')
     
     # --- 3. RUN EVALUATION ---
-    # Kept the threshold at 0.25 to help catch the Warping defect!
     evaluate_as_classifier(best_model, test_images_dir, test_labels_dir, conf_threshold=0.25)

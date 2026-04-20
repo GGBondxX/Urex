@@ -9,7 +9,7 @@ def evaluate_as_classifier(model, img_dir, lbl_dir, conf_threshold=0.50):
     print(f"\n=== RUNNING CUSTOM IMAGE-LEVEL EVALUATION ===")
     print(f"Confidence Threshold strictly set to: {conf_threshold}")
     
-    # Get the names of your classes from the model
+    # Get the names of classes from the model
     class_names = model.names
     
     # Initialize score trackers for each class
@@ -81,7 +81,7 @@ if __name__ == '__main__':
 
     # --- 2. TRAIN ---
     print("Starting training...")
-    # Added batch=8 to prevent your GPU's VRAM from overflowing
+    # Added batch=8 to prevent GPU's VRAM from overflowing
     results = model.train(data=yaml_path, epochs=50, imgsz=640, batch=8)
 
     print("Training complete!")
