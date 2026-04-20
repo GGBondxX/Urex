@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['spaghetti_and_stringing', 'warp']
+
+roboflow:
+  workspace: nus-dl48q
+  project: 3d-printing-defect-grgeh
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/nus-dl48q/3d-printing-defect-grgeh/dataset/1
